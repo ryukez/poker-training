@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     open: true,
   },
-  base: process.env.NODE_ENV === "production" ? "/poker/" : "/",
+  base: process.env.NODE_ENV === "production" ? "/poker-training/" : "/",
   build: {
     outDir: "dist",
     assetsDir: "assets",
