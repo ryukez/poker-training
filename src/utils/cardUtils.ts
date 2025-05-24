@@ -58,8 +58,9 @@ export function getCardImagePaths(hand: string): string[] {
   }
 
   // pocket で同ランクなので rankNames[1] === rankNames[0]
-  const card1 = `/images/${rankNames[0]}_of_${suit1}.png`;
-  const card2 = `/images/${rankNames[1]}_of_${suit2}.png`;
+  const base = import.meta.env.BASE_URL;
+  const card1 = `${base}images/${rankNames[0]}_of_${suit1}.png`;
+  const card2 = `${base}images/${rankNames[1]}_of_${suit2}.png`;
 
   return [card1, card2];
 }

@@ -29,7 +29,8 @@ export const HAND_COLOR_MAP: HandEntry[] = [
 // CSV ローダ（hand,color）
 export async function fetchHandColorMap(): Promise<HandEntry[]> {
   try {
-    const res = await fetch("/hands.csv");
+    // import.meta.env.BASE_URL は Vite のベースパス (開発時は "/", 本番 GitHub Pages では "/poker-training/") に解決される
+    const res = await fetch(`${import.meta.env.BASE_URL}hands.csv`);
     const text = await res.text();
     const lines = text.trim().split(/\r?\n/);
     // skip header
